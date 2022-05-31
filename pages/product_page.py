@@ -25,6 +25,13 @@ class ProductPage(BasePage):
         assert book_name == added_book_name, "Book name doesn't match"
         assert book_price == added_book_price, "Book price doesn't match"
 
+    def guest_cant_see_success_message(self):
+        assert self.is_not_element_present(*ProductPageLocators.SUCCESS_MESSAGE), \
+            "Success message is presented"
+
+    def message_disappeared_after_adding_product_to_basket(self):
+        assert self.is_disappeared(*ProductPageLocators.SUCCESS_MESSAGE), \
+            "Success message isn't disappeared"
 
 
 
