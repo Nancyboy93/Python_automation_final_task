@@ -11,7 +11,7 @@ class ProductPage(BasePage):
 
     def should_be_adding_book_message(self):
         adding_book_message = self.browser.find_element(*ProductPageLocators.ADDING_BOOK_MESSAGE).text
-        assert adding_book_message == "Coders at Work был добавлен в вашу корзину.", \
+        assert adding_book_message == "Coders at Work has been added to your basket.", \
             f"Got {adding_book_message} instead of expected"
 
     def should_be_adding_price_message(self):
